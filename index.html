@@ -197,8 +197,8 @@
 
   function showMailingPopUp() {
   var promiseModal = new Promise(function(resolve, reject) {
-    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5"}) })
-    resolve('Success!');
+    resolve(    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5"}) })
+);
   });
   promiseModal.then(function(){
     document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
