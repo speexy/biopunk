@@ -195,35 +195,32 @@
 
   <script>
 
-  function showMailingPopUp() {
-  var promiseModal = new Promise(function(resolve, reject) {
-    resolve(    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5"}) })
-);
-  });
-  promiseModal.then(function(){
-    document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-    document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+  function waitForModal(elementId, callBack){
+    window.setTimeout(function(){
+      var element = document.getElementById(elementId);
+      if(element){
+        callBack(elementId, element);
+      }else{
+        waitForElement(elementId, callBack);
+      }
+    },500)
+  }
+
+  function updateModal(){
     var banner = document.querySelector(".mc-banner");
     var modal = document.querySelector(".mc-modal");
     banner.style="visibility:hidden";
     modal.style="visibility:visible";
-  })
+  }
 
-  promiseModal.then(function(value) {
-    console.log(value);
 
-  });
-}
-
-/*
   function showMailingPopUp() {
       require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5"}) })
+      waitForModal("PopupSignupForm_0", updateModal)
       document.cookie = "MCEvilPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
       document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
       document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
   };
-  */
 
   document.getElementById("open-popup").onclick = function() {showMailingPopUp()};
   </script>
