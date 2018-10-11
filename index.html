@@ -207,10 +207,12 @@
   }
 
   function updateModal(){
-    var banner = document.querySelector(".mc-banner");
-    var modal = document.querySelector(".mc-modal");
-    banner.style="visibility:hidden";
-    modal.style="visibility:visible";
+    var banner = document.querySelectorAll(".mc-banner");
+    var modal = document.querySelectorAll(".mc-modal");
+    for (i=0; i<banner.length; i++){
+      banner.style="visibility:hidden";
+      modal.style="visibility:visible";
+    }
   }
 
 
