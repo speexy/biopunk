@@ -199,9 +199,9 @@
     window.setTimeout(function(){
       var element = document.querySelector(".mc-banner");
       if(element){
-        callBack(elementId, element);
+        callBack();
       }else{
-        waitForElement(elementId, callBack);
+        waitForElement(element, callBack);
       }
     },500)
   }
