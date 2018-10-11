@@ -200,6 +200,7 @@
       var element = document.querySelector(".mc-banner");
       if(element){
         callBack();
+        var element = null;
       }else{
         waitForModal(element, callBack);
       }
