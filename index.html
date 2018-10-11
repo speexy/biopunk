@@ -154,12 +154,6 @@
     }
   </style>
 <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script type="text/javascript">
-function showMailingPopUp(){
-  window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5","uniqueMethods":true}) })
-  document.getElementById(“open-popup”).onclick = function() {showMailingPopUp()};
-}
-</script>
 </head>
 
 <body>
@@ -172,6 +166,13 @@ function showMailingPopUp(){
 </div>
 <div class="buttonWrapper">
   <button id=”open-popup”>newsle<span>t</span>ter</button>
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+  <script type="text/javascript">
+  function showMailingPopUp(){
+    require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"31ae69c6cb4299fa847b5fb98","lid":"05fa14bdc5","uniqueMethods":true}) })
+    document.getElementById(“open-popup”).onclick = function() {showMailingPopUp()};
+  }
+  </script>
 </div>
 <!--
 <div class="textbox">
