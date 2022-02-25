@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-favicon": "^3.1.5",
     "gatsby-plugin-react-helmet": "^3.0.6",
     "gatsby-source-filesystem": "^2.0.20",
@@ -22,6 +22,5 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {}
+  }
 }
