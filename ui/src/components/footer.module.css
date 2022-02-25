@@ -20,14 +20,38 @@
   color: white;
 }
 
-.footer div {
+.footer > div {
   background: gradientGrey;
+  display: flex;
+  flex-wrap: wrap;
   padding: padding;
   text-align: center;
 }
 @media (max-width: breakTablet) {
-  .footer div {
+  .footer > div {
     padding-bottom: 120px;
     font-size: 11px;
   }
+  .footer .bmbf, .footer .adress {
+    width: 100%;
+    padding: 40px;
+  }
+}
+
+.bmbf, .adress {
+  width: 50%;
+  padding: 40px;
+}
+
+.bmbf img {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.bmbf p {
+  text-align: center;
+  max-width: 360px;
+  padding-top: 20px;
+  margin: 0 auto;
 }

@@ -21,6 +21,7 @@
 @value contentPaddingMobile: 40px;
 
 /* breakpoints*/
-@value breakMobile: 420px;
-@value breakTablet: 768px;
-@value breakColumns: 640px;
+/* substracted 1 pixel for max-width*/
+@value breakMobile: 419px;
+@value breakTablet: 767px;
+@value breakColumns: 639px;
