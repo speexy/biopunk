@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: speexy/biopunk.kitchen
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: "ui/static/media" # Media files will be stored in the repo under images/uploads
+public_folder: /media
+
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/index.md"
+        label: "Home"
+        name: "index"
+        fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Tagline", name: "tagline", widget: "string"}
+            - {label: "Sections", name: "sections", widget: "list", allow_add: false, fields: [
+                  {label: "Section Title", name: "title", widget: "string"},
+                  {label: "Color Band", name: "color", widget: "select", options: ["blue","darkBlue","orange","pink"], default: "pink"},
+                  {label: "Section Image", name: "image", widget: "image"},
+                  {label: "Section Text", name: "text", widget: "markdown"},
+                  {label: "Section Link", name: "link", widget: "object", fields: [
+                      {label: "Link Label", name: "label", widget: "string"},
+                      {label: "Link Url", name: "url", widget: "string", hint: "Use complete url, starting with http"},
+                      {label: "Style as Button", name: "button", widget: "boolean", default: false}
+                  ]}
+              ]}
+      - file: "content/about.md"
+        label: "About"
+        name: "about"
+        fields:
+            - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Hero Image", name: "image", widget: "image"}
+            - {label: "Body", name: "body", widget: "markdown"}
+      - file: "content/equipment.md"
+        label: "Equipment Oveview"
+        name: "equipment-overview"
+        fields:
+            - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equipment"}
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Hero Image", name: "image", widget: "image"}
+      - file: "content/projects.md"
+        label: "Project Overview"
+        name: "project-overview"
+        fields:
+            - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Hero Image", name: "image", widget: "image"}
+      - file: "content/legal.md"
+        label: "Imprint & Privacy"
+        name: "legal"
+        fields:
+            - {label: "Template Key", name: "templateKey", widget: "hidden", default: "legal"}
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Hero Image", name: "image", widget: "image"}
+            - {label: "Body", name: "body", widget: "markdown"}
+  - name: "equipment"
+    label: "Equipment"
+    folder: "content/equipment"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "equip"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Equipment Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "projects"
+    label: "Projects"
+    folder: "content/projects"
+    slug: "{slug}}"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Project Summary", name: "summary", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
